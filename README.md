@@ -103,6 +103,7 @@ Anytime you run diffusion you should be sure to activate this conda environment 
 ```
 conda activate SE3nv
 ```
+Total setup should take less than 30 minutes on a standard desktop computer.
 Note: Due to the variation in GPU types and drivers that users have access to, we are not able to make one environment that will run on all setups. As such, we are only providing a yml file with support for CUDA 11.1 and leaving it to each user to customize it to work on their setups. This customization will involve changing the cudatoolkit and (possibly) the PyTorch version specified in the yml file.
 
 ---
@@ -325,7 +326,7 @@ This will process either a single pdb, or a folder of pdbs, and output a seconda
 ./scripts/run_inference.py inference.output_prefix=./scaffold_conditioned_test/test scaffoldguided.scaffoldguided=True scaffoldguided.target_pdb=False scaffoldguided.scaffold_dir=./examples/ppi_scaffolds_subset
 ```
 
-A few exra things:
+A few extra things:
 1) As mentioned above, for PPI, you will want to provide a target protein, along with its secondary structure and block adjacency. This can be done by adding:
 
 ```
@@ -437,7 +438,7 @@ For now, we require that a user have a symmetrized version of their motif in the
 | Dihedral (flip/reflection) | X |
 
 
-**Example: Inputs for symmetric motif scaffolding with motif position specified w.r.t the symetry axes.**
+**Example: Inputs for symmetric motif scaffolding with motif position specified w.r.t the symmetry axes.**
 
 This example script `examples/design_nickel.sh` can be used to scaffold the C4 symmetric Nickel binding domains shown in the RFdiffusion paper. It combines many concepts discussed earlier, including symmetric oligomer generation, motif scaffolding, and use of guiding potentials.
 
